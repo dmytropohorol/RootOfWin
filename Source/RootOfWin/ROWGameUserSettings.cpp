@@ -2,6 +2,9 @@
 
 
 #include "ROWGameUserSettings.h"
+#include "Kismet/GameplayStatics.h"
+#include "AudioDevice.h"
+#include "Math/Color.h"
 
 UROWGameUserSettings::UROWGameUserSettings(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)
 {
@@ -35,6 +38,16 @@ void UROWGameUserSettings::SetShowFPS(bool NewValue)
 bool UROWGameUserSettings::GetShowFPS() const
 {
 	return bShowFPS;
+}
+
+void UROWGameUserSettings::SetMainColor(FLinearColor NewValue)
+{
+	MainColor = NewValue;
+}
+
+FLinearColor UROWGameUserSettings::GetMainColor() const
+{
+	return MainColor;
 }
 
 UROWGameUserSettings* UROWGameUserSettings::GetROWGameUserSettings()

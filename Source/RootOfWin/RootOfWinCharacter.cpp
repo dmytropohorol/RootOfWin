@@ -3,6 +3,7 @@
 
 #include "RootOfWinCharacter.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/SphereComponent.h"
 
 // Sets default values
 ARootOfWinCharacter::ARootOfWinCharacter()

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "RootOfWinCharacter.generated.h"
-class UCapsuleComponent;
+class USphereComponent;
 
 
 UCLASS()

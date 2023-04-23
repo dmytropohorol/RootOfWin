@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameUserSettings.h"
 #include "ROWGameUserSettings.generated.h"
+struct FLinearColor;
 
 /**
  * 
@@ -32,6 +33,11 @@ public:
 	bool GetShowFPS() const;
 
 	UFUNCTION(BlueprintCallable)
+	void SetMainColor(FLinearColor NewValue);
+	UFUNCTION(BlueprintPure)
+	FLinearColor GetMainColor() const;
+
+	UFUNCTION(BlueprintCallable)
 	static UROWGameUserSettings* GetROWGameUserSettings();
 
 protected:
@@ -44,4 +50,9 @@ protected:
 	UPROPERTY(Config)
 	bool bShowFPS;
 
+	UPROPERTY(Config)
+	FLinearColor MainColor;
+
+	UPROPERTY(Config)
+	bool InvertMouse;
 };
