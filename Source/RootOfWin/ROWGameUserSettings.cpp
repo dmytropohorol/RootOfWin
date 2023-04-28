@@ -4,6 +4,8 @@
 #include "ROWGameUserSettings.h"
 #include "Kismet/GameplayStatics.h"
 #include "AudioDevice.h"
+#include "EnhancedActionKeyMapping.h"
+#include "Containers/Array.h"
 #include "Math/Color.h"
 
 UROWGameUserSettings::UROWGameUserSettings(const FObjectInitializer& ObjectInitializer) :Super(ObjectInitializer)
@@ -48,6 +50,76 @@ void UROWGameUserSettings::SetMainColor(FLinearColor NewValue)
 FLinearColor UROWGameUserSettings::GetMainColor() const
 {
 	return MainColor;
+}
+
+void UROWGameUserSettings::SetInvertMouse(bool NewValue)
+{
+	bInvertMouse = NewValue;
+}
+
+bool UROWGameUserSettings::GetInvertMouse() const
+{
+	return bInvertMouse;
+}
+
+void UROWGameUserSettings::SetMouseSensetivity(float NewValue)
+{
+	MouseSensetivity = NewValue;
+}
+
+float UROWGameUserSettings::GetMouseSensetivity() const
+{
+	return MouseSensetivity;
+}
+
+void UROWGameUserSettings::SetMasterVolume(float NewValue)
+{
+	MasterVolume = NewValue;
+}
+
+float UROWGameUserSettings::GetMasterVolume() const
+{
+	return MasterVolume;
+}
+
+void UROWGameUserSettings::SetMusicVolume(float NewValue)
+{
+	MusicVolume = NewValue;
+}
+
+float UROWGameUserSettings::GetMusicVolume() const
+{
+	return MusicVolume;
+}
+
+void UROWGameUserSettings::SetEffectsVolume(float NewValue)
+{
+	EffectsVolume = NewValue;
+}
+
+float UROWGameUserSettings::GetEffectsVolume() const
+{
+	return EffectsVolume;
+}
+
+void UROWGameUserSettings::SetMenuVolume(float NewValue)
+{
+	MenuVolume = NewValue;
+}
+
+float UROWGameUserSettings::GetMenuVolume() const
+{
+	return MenuVolume;
+}
+
+void UROWGameUserSettings::SetKeyboardSave(const TArray<FEnhancedActionKeyMapping> NewValue)
+{
+	KeyboardSave = NewValue;
+}
+
+TArray<FEnhancedActionKeyMapping> UROWGameUserSettings::GetKeyboardSave() const
+{
+	return KeyboardSave;
 }
 
 UROWGameUserSettings* UROWGameUserSettings::GetROWGameUserSettings()

@@ -6,7 +6,8 @@
 #include "GameFramework/GameUserSettings.h"
 #include "ROWGameUserSettings.generated.h"
 struct FLinearColor;
-
+struct FKey;
+struct FEnhancedActionKeyMapping;
 /**
  * 
  */
@@ -38,21 +39,73 @@ public:
 	FLinearColor GetMainColor() const;
 
 	UFUNCTION(BlueprintCallable)
+	void SetInvertMouse(bool NewValue);
+	UFUNCTION(BlueprintPure)
+	bool GetInvertMouse() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetMouseSensetivity(float NewValue);
+	UFUNCTION(BlueprintPure)
+	float GetMouseSensetivity() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetMasterVolume(float NewValue);
+	UFUNCTION(BlueprintPure)
+	float GetMasterVolume() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetMusicVolume(float NewValue);
+	UFUNCTION(BlueprintPure)
+	float GetMusicVolume() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetEffectsVolume(float NewValue);
+	UFUNCTION(BlueprintPure)
+	float GetEffectsVolume() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetMenuVolume(float NewValue);
+	UFUNCTION(BlueprintPure)
+	float GetMenuVolume() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetKeyboardSave(const TArray<FEnhancedActionKeyMapping> NewValue);
+	UFUNCTION(BlueprintPure)
+	TArray<FEnhancedActionKeyMapping> GetKeyboardSave() const;
+
+	UFUNCTION(BlueprintCallable)
 	static UROWGameUserSettings* GetROWGameUserSettings();
 
 protected:
+	//Graphics settings
 	UPROPERTY(Config)
 	float BrightnessAmount;
-
 	UPROPERTY(Config)
 	bool bMotionBlur;
-
 	UPROPERTY(Config)
 	bool bShowFPS;
 
+	//Gameplay settings
 	UPROPERTY(Config)
 	FLinearColor MainColor;
 
+
+	//Keyboard/Mouse settings
 	UPROPERTY(Config)
-	bool InvertMouse;
+	bool bInvertMouse;
+	UPROPERTY(Config)
+	float MouseSensetivity;
+	UPROPERTY(Config, BlueprintReadWrite, EditAnywhere)
+	TArray<FEnhancedActionKeyMapping> KeyboardSave;
+
+
+	//Audio settings
+	UPROPERTY(Config)
+	float MasterVolume;
+	UPROPERTY(Config)
+	float MusicVolume;
+	UPROPERTY(Config)
+	float EffectsVolume;
+	UPROPERTY(Config)
+	float MenuVolume;
 };
