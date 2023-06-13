@@ -21,6 +21,14 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "AdvancedSteamSessions",
+			"Enabled": false
+		},
+		{
+			"Name": "AdvancedSessions",
+			"Enabled": false
 		}
 	],
 	"TargetPlatforms": [
