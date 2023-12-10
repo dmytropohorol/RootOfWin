@@ -112,6 +112,16 @@ float UROWGameUserSettings::GetMenuVolume() const
 	return MenuVolume;
 }
 
+void UROWGameUserSettings::SetLanguage(int32 NewValue)
+{
+	Language = NewValue;
+}
+
+int32 UROWGameUserSettings::GetLanguage() const
+{
+	return Language;
+}
+
 void UROWGameUserSettings::SetKeyboardSave(const TArray<FEnhancedActionKeyMapping> NewValue)
 {
 	KeyboardSave = NewValue;

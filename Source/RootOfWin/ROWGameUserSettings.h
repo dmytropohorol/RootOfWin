@@ -69,6 +69,11 @@ public:
 	float GetMenuVolume() const;
 
 	UFUNCTION(BlueprintCallable)
+	void SetLanguage(int32 NewValue);
+	UFUNCTION(BlueprintPure)
+	int32 GetLanguage() const;
+
+	UFUNCTION(BlueprintCallable)
 	void SetKeyboardSave(const TArray<FEnhancedActionKeyMapping> NewValue);
 	UFUNCTION(BlueprintPure)
 	TArray<FEnhancedActionKeyMapping> GetKeyboardSave() const;
@@ -88,6 +93,8 @@ protected:
 	//Gameplay settings
 	UPROPERTY(Config)
 	FLinearColor MainColor;
+	UPROPERTY(Config)
+	int32 Language;
 
 
 	//Keyboard/Mouse settings
